@@ -1,7 +1,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/dkozickis/ctco-task/badge.svg?branch=master)](https://coveralls.io/github/dkozickis/ctco-task?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5f88958e7c6f7ef87f14/maintainability)](https://codeclimate.com/github/dkozickis/ctco-task/maintainability)
 
-######Everyone loves badges
+###### Everyone loves badges
 
 # C.T.Co Front-end task
 
@@ -9,6 +9,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 * Some testing coverage is available, so please feel free to run `ng test` & `ng e2e`
 * Inspired by Angular docs, TypeScript docs, own knowledge, and PHP flashbacks
+* Bootstrap 4 used (mainly for forms), with selective build
+* Form JSON field types can be 'input' or 'string', other examples weren't given
 
 You obviously know it, but you have to `git clone` this to your stations first, and then install packages with `npm` or `yarn` whichever you're using.
 
