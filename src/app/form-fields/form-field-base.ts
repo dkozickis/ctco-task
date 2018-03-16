@@ -1,3 +1,8 @@
+/**
+ * Base class for form field storage.
+ * Generic so that we can have 'value' as generic as well,
+ * as it cann be 'string | number', and we wan't same in same out, I think...
+ */
 export abstract class FormFieldBase<T> {
   label: string;
   normalizedLabel: string;

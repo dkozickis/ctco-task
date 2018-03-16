@@ -1,9 +1,9 @@
-import {Inject, Injectable} from '@angular/core';
-import {FormFieldInput} from '../form-fields/form-field-input';
-import {FormFieldCurrency} from '../form-fields/form-field-currency';
-import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {keyBy} from 'lodash';
-import {FormFieldBase} from '../form-fields/form-field-base';
+import { Injectable } from '@angular/core';
+import { FormFieldInput } from '../form-fields/form-field-input';
+import { FormFieldCurrency } from '../form-fields/form-field-currency';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { keyBy } from 'lodash';
+import { FormFieldBase } from '../form-fields/form-field-base';
 
 @Injectable()
 export class FormFieldsService {
@@ -11,6 +11,10 @@ export class FormFieldsService {
   formControlsArray: any = {};
   form: FormGroup;
 
+  /**
+   *
+   * @param {any[]} sections
+   */
   prepareFormFields(sections: any[]) {
     /**
      * Process one section at a time
@@ -28,6 +32,10 @@ export class FormFieldsService {
         return this.createFormField(field);
       });
 
+      /**
+       * Push Angular FormControl 's to array.
+       * While not part of the task, I wanted to have model <-> view binding working, so had to create a FormGroup
+       */
       this.formFields[sectionNameCamelized].forEach((element) => {
         const normalizedLabel = element.label.replace(/[^a-z0-9]+/gi, '');
         this.formControlsArray[normalizedLabel] = this.createFormControl(element);
@@ -43,12 +51,22 @@ export class FormFieldsService {
       this.formControlsArray
     );
 
+    /**
+     * keyBy is a lodash function.
+     * I wanted sections to have keys according to the camelized name of the section
+     */
     return {
       'sections': keyBy(sections, section => this.camelize(section.header)),
       'form': this.form
     };
   }
 
+  /**
+   * Creates form field based on 'options' provided.
+   *
+   * @param options
+   * @returns {FormFieldBase<any>}
+   */
   private createFormField(options) {
     switch (options.type) {
       case 'input': {
@@ -62,6 +80,7 @@ export class FormFieldsService {
 
 
   /**
+   * Creates Angular FormControl based on FormFieldBase<any> input
    *
    * @param {FormFieldBase<any>} element
    * @returns {FormControl}
@@ -82,12 +101,26 @@ export class FormFieldsService {
     return formControl;
   }
 
-  capitalize(word) {
-    return `${word.slice(0, 1).toUpperCase()}${word.slice(1).toLowerCase()}`;
-  }
-
+  /**
+   * Camelize input string
+   *
+   * @param text
+   * @param {string} separator
+   * @returns {string}
+   */
   camelize(text, separator = ' ') {
     const words = text.split(separator);
     return [words[0], words.slice(1).map((word) => this.capitalize(word))].join('');
+  }
+
+
+  /**
+   * Capitalize input string
+   *
+   * @param word
+   * @returns {string}
+   */
+  capitalize(word) {
+    return `${word.slice(0, 1).toUpperCase()}${word.slice(1).toLowerCase()}`;
   }
 }

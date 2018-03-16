@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -10,11 +10,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 
 export class SectionComponent implements OnInit {
   @Input() sectionData: any;
-  @Input() form: FormBuilder;
+  @Input() form: FormGroup;
   colWidth: number;
-
-  constructor() {
-  }
 
   ngOnInit() {
     /**

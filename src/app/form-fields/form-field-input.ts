@@ -1,9 +1,12 @@
-import {FormFieldBase} from './form-field-base';
+import { FormFieldBase } from './form-field-base';
 
+/**
+ * Boring input typel
+ */
 export class FormFieldInput extends FormFieldBase<string> {
-  controlType = 'input';
 
   constructor(options: {} = {}) {
     super(options);
+    this.controlType = 'input';
   }
 }

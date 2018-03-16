@@ -1,25 +1,25 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
 
-import {AppComponent} from './app.component';
-import {FormFieldComponent} from './form-fields/form-field.component';
-import {WidgetComponent} from './widget/widget.component';
-import {SectionComponent} from './section/section.component';
-import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AppComponent } from './app.component';
+import { FormFieldComponent } from './form-fields/form-field.component';
+import { WidgetComponent } from './widget/widget.component';
+import { SectionComponent } from './section/section.component';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormFieldComponent,
     WidgetComponent,
-    SectionComponent
+    SectionComponent,
+    FormFieldComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]

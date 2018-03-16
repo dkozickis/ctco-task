@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {FormDataService} from './form-data-service/form-data.service';
-import {filter} from 'lodash';
-import {NgForm} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormDataService } from './form-data-service/form-data.service';
+import { filter } from 'lodash';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',

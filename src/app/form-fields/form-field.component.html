@@ -4,6 +4,7 @@
 
     <div [ngSwitch]="field.controlType">
 
+      <!-- Input type -->
       <input *ngSwitchCase="'input'" type="text"
              [formControlName]="field.normalizedLabel"
              [id]="field.normalizedLabel"
@@ -11,6 +12,7 @@
              [required]="field.required"
       >
 
+      <!-- Currency type -->
       <div class="input-group" *ngSwitchCase="'currency'">
         <div class="input-group-prepend">
           <span class="input-group-text">{{ getCurrencySymbol(field.symbol) }}</span>
