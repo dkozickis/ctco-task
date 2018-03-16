@@ -1,0 +1,29 @@
+<div [formGroup]="form">
+  <div class="form-group">
+    <label [attr.for]="field.normalizedLabel">{{ field.label }}</label>
+
+    <div [ngSwitch]="field.controlType">
+
+      <input *ngSwitchCase="'input'" type="text"
+             [formControlName]="field.normalizedLabel"
+             [id]="field.normalizedLabel"
+             class="form-control"
+             [required]="field.required"
+      >
+
+      <div class="input-group" *ngSwitchCase="'currency'">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{ getCurrencySymbol(field.symbol) }}</span>
+        </div>
+        <input type="number" class="form-control"
+               [step]="calculateStep(field.precision)"
+               [formControlName]="field.normalizedLabel"
+               [id]="field.normalizedLabel"
+               [required]="field.required"
+        >
+      </div>
+
+    </div>
+  </div>
+
+</div>

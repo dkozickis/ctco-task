@@ -1,0 +1,35 @@
+@import 'variables';
+
+.widget {
+  width: 715px;
+  height: 520px;
+  background-color: $widget-background-color;
+  border-radius: 10px;
+  box-shadow: 2.5px 4.33px 20px rgba(0, 0, 1, 0.42);
+
+  &__header {
+    padding: 15px 20px;
+  }
+
+  &__title {
+    font-weight: bold;
+    color: $widgetHeader-text-color;
+    font-family: $header-font-family;
+    font-size: 18px;
+  }
+
+  &__save {
+    color: $widgetSave-text-color;
+    cursor: pointer;
+  }
+
+  &__cancel {
+    color: $widgetCancel-text-color;
+    cursor: pointer;
+  }
+}
+
+form {
+  height: 460px;
+  overflow: scroll;
+}

@@ -1,0 +1,10 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  padding-top: 80px;
+  background: linear-gradient(45deg, $gradient-start, $gradient-finish);
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}

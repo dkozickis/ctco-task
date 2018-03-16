@@ -1,0 +1,23 @@
+@import 'variables';
+
+label {
+  margin-bottom: 0.1rem;
+  color: rgba($formLabel-text-color, 0.8);
+  font-size: 0.8rem;
+}
+
+.input-group-text {
+  background-color: #fff;
+}
+
+.input-group > .form-control {
+  border-left: none;
+}
+
+input:required {
+  border-left: 2px solid $formInput-required;
+}
+
+input {
+  border-top-right-radius: 1px;
+}

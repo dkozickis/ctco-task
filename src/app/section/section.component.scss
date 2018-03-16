@@ -1,0 +1,22 @@
+@import "variables";
+
+.section {
+
+  &__header {
+    background-color: $sectionHeader-background-color;
+    color: $sectionHeader-text-color;
+    height: 40px;
+    padding-left: 15px;
+    line-height: 36px;
+    font-weight: bold;
+    border-top: 2px solid $sectionHeader-border-color;
+    border-bottom: 2px solid $sectionHeader-border-color;
+    font-family: $header-font-family;
+  }
+
+  &__form {
+    padding: 20px 15px;
+  }
+
+}
+

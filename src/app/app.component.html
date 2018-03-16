@@ -1,0 +1,30 @@
+<ng-container *ngIf="!dataLoaded">
+
+  <div class="row justify-content-center loadProvider">
+    <div class="col-6">
+      <form (ngSubmit)="loadUrlData(urlForm)" #urlForm="ngForm" novalidate>
+        <div class="form-group">
+          <label for="url">JSON URL:</label>
+          <input type="text" class="form-control" id="url" name="url" placeholder="Enter URL" ngModel="">
+        </div>
+        <button type="submit" class="btn btn-primary">Process URL</button>
+      </form>
+      <hr>
+      <form (ngSubmit)="loadRawData(rawForm)" name="processRAW" #rawForm="ngForm">
+        <div class="form-group">
+          <label for="raw">JSON Raw:</label>
+          <textarea type="text" class="form-control" id="raw" name="raw" placeholder="" rows="10" ngModel="">
+          </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Process RAW</button>
+      </form>
+    </div>
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="dataLoaded">
+  <div *ngFor="let widget of widgets" class="d-flex justify-content-center">
+    <app-widget [widgetData]="widget" (resetWidgetsEvent)="receiveMessage()"></app-widget>
+  </div>
+</ng-container>

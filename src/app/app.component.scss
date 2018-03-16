@@ -1,0 +1,11 @@
+@import "variables";
+
+.loadProvider {
+  color: #fff;
+}
+
+.btn {
+  background-color: $widget-background-color !important;
+  color: $widgetSave-text-color;
+  border: none;
+}

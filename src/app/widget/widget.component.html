@@ -1,0 +1,12 @@
+<div class="widget">
+  <div class="row justify-content-between widget__header">
+    <div class="col-auto widget__cancel" (click)="askToResetWidgets()">Cancel</div>
+    <div class="col-auto widget__title">{{ widgetData.name }}</div>
+    <div class="col-auto widget__save" (click)="formSubmit()">Save</div>
+  </div>
+  <form (ngSubmit)="formSubmit()" [formGroup]="form">
+    <div *ngFor="let sectionKey of sectionKeys">
+      <app-section [sectionData]="sections[sectionKey]" [form]="form"></app-section>
+    </div>
+  </form>
+</div>
