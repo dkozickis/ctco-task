@@ -1,27 +1,25 @@
-# CtcoTask
+[![Coverage Status](https://coveralls.io/repos/github/dkozickis/ctco-task/badge.svg?branch=master)](https://coveralls.io/github/dkozickis/ctco-task?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5f88958e7c6f7ef87f14/maintainability)](https://codeclimate.com/github/dkozickis/ctco-task/maintainability)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+######Everyone loves badges
+
+# C.T.Co Front-end task
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3, for the sole purpose of submitting it to C.T.Co for front-end job.
+
+* Some testing coverage is available, so please feel free to run `ng test` & `ng e2e`
+* Inspired by Angular docs, TypeScript docs, own knowledge, and PHP flashbacks
+
+You obviously know it, but you have to `git clone` this to your stations first, and then install packages with `npm` or `yarn` whichever you're using.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --open` for a dev server which will automatically open in your default browser (yay!). 
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Testing
 
-## Build
+Run `ng test` to execute the unit tests.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng e2e` to execute the end-to-end.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
