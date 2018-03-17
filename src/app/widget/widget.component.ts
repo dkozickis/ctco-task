@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { filter } from 'lodash';
 import { FormGroup } from '@angular/forms';
 import { FormFieldsService } from '../form-fields-service/form-fields.service';
+import { SectionClass, WidgetClass } from '../form-data/form-data.class';
 
 @Component({
   selector: 'app-widget',
@@ -10,9 +11,9 @@ import { FormFieldsService } from '../form-fields-service/form-fields.service';
   providers: [FormFieldsService]
 })
 export class WidgetComponent implements OnInit {
-  @Input() widgetData;
+  @Input() widgetData: WidgetClass;
   @Output() resetWidgetsEvent = new EventEmitter<string>();
-  sections: any;
+  sections: SectionClass[];
   form: FormGroup;
   sectionKeys: any[];
 
@@ -25,7 +26,7 @@ export class WidgetComponent implements OnInit {
 
   ngOnInit() {
     /* Filter sections that are not sections :) */
-    this.sections = filter(this.widgetData.items, (item) => item.type === 'section');
+    this.sections = filter(this.widgetData.items, (item: SectionClass) => item.type === 'section');
     /* Modify sections (add an array of FormFieldBase<any> relevant to section) and get our FormGroup object */
     ({sections: this.sections, form: this.form} = this.formFieldsService.prepareFormFields(this.sections));
     /* Get keys of sections. Because template 'let ... of ...' cannot operate on object :( */

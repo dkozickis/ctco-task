@@ -2,7 +2,7 @@
   <div class="section__header">{{ sectionData.header }}</div>
   <div class="row section__form" [formGroup]="form">
 
-    <div class="col-{{ colWidth }}" *ngFor="let field of sectionData.formFields">
+    <div class="col-{{ colWidth }}" *ngFor="let field of sectionData.items">
       <app-form-field [field]="field" [form]="form"></app-form-field>
     </div>
 

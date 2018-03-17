@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { SectionClass } from '../form-data/form-data.class';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { FormGroup } from '@angular/forms';
 })
 
 export class SectionComponent implements OnInit {
-  @Input() sectionData: any;
+  @Input() sectionData: SectionClass;
   @Input() form: FormGroup;
   colWidth: number;
 

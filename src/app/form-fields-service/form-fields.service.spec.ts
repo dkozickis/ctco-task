@@ -1,6 +1,7 @@
 import { FormFieldsService } from './form-fields.service';
 import { filter } from 'lodash';
 import { FormGroup } from '@angular/forms';
+import { SectionClass } from '../form-data/form-data.class';
 
 describe('FormFieldsService', () => {
   let ffs: FormFieldsService;
@@ -40,14 +41,13 @@ describe('FormFieldsService', () => {
       '        }\n' +
       '      ]\n' +
       '    }');
-    data = filter(data.items, (item) => item.type === 'section');
+    data = filter(data.items, (item: SectionClass) => item.type === 'section');
   });
 
   it('should get proper data', function () {
     const prepareFormFields = ffs.prepareFormFields(data);
-    console.log(prepareFormFields);
     expect(prepareFormFields).toEqual(jasmine.any(Object));
     expect(prepareFormFields.form).toEqual(jasmine.any(FormGroup));
-    expect(prepareFormFields.sections.OpportunityDetails.header).toBe('Opportunity details');
+    expect(prepareFormFields.sections['OpportunityDetails'].header).toBe('Opportunity details');
   });
 });

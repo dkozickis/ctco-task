@@ -4,6 +4,7 @@ import { FormFieldCurrency } from '../form-fields/form-field-currency';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { keyBy } from 'lodash';
 import { FormFieldBase } from '../form-fields/form-field-base';
+import { SectionClass } from '../form-data/form-data.class';
 
 @Injectable()
 export class FormFieldsService {
@@ -11,25 +12,23 @@ export class FormFieldsService {
   formControlsArray: any = {};
   form: FormGroup;
 
-  /**
-   *
-   * @param {any[]} sections
-   */
   prepareFormFields(sections: any[]) {
     /**
      * Process one section at a time
      */
-    sections.forEach((section, sectionIndex, sectionArray) => {
+    sections.forEach((section: SectionClass) => {
       const sectionNameCamelized = this.camelize(section.header);
 
       /**
        * We're going over "items" in our "section" array, doing couple things:
        *    1. Create FormFieldBase object via createFormField()
        *    2. Put it into this.formFields array - needed for next iteration
-       *    3. Put it into "section" array, under formFields array - needed for further display in section @Component
+       *    3. Change current "iteM' in SectionClass to typehinted (input, currency) FormField, just because we can
        */
-      sectionArray[sectionIndex]['formFields'] = this.formFields[sectionNameCamelized] = section.items.map((field) => {
-        return this.createFormField(field);
+      this.formFields[sectionNameCamelized] = section.items.map((field, index, sectionArray) => {
+        const formField = this.createFormField(field);
+        sectionArray[index] = formField;
+        return formField;
       });
 
       /**
@@ -56,7 +55,7 @@ export class FormFieldsService {
      * I wanted sections to have keys according to the camelized name of the section
      */
     return {
-      'sections': keyBy(sections, section => this.camelize(section.header)),
+      'sections': (<SectionClass[]>keyBy(sections, section => this.camelize(section.header))),
       'form': this.form
     };
   }
