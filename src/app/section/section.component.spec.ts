@@ -6,6 +6,7 @@ import { FormFieldComponent } from '../form-fields/form-field.component';
 import { FormFieldsService } from '../form-fields-service/form-fields.service';
 
 import { filter } from 'lodash';
+import {SectionClass} from '../form-data/form-data.class';
 
 describe('SectionComponent', () => {
   let component: SectionComponent;
@@ -60,7 +61,7 @@ describe('SectionComponent', () => {
       '        }\n' +
       '      ]\n' +
       '    }');
-    data = filter(data.items, (item) => item.type === 'section');
+    data = filter(data.items, (item: SectionClass) => item.type === 'section');
     ({sections: sections, form: form} = ffs.prepareFormFields(data));
 
     component.sectionData = sections.OpportunityDetails;
