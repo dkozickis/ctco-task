@@ -1,34 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { SectionComponent } from './section.component';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormFieldComponent } from '../form-fields/form-field.component';
-import { FormFieldsService } from '../form-fields-service/form-fields.service';
-
+import { FormFieldsService } from './form-fields.service';
 import { filter } from 'lodash';
-import {SectionClass} from '../form-data/form-data.class';
+import { FormGroup } from '@angular/forms';
+import { SectionClass } from '../../entities/form-data.class';
 
-describe('SectionComponent', () => {
-  let component: SectionComponent;
-  let fixture: ComponentFixture<SectionComponent>;
+describe('FormFieldsService', () => {
   let ffs: FormFieldsService;
-  let sections: any;
-  let form: FormGroup;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [SectionComponent, FormFieldComponent],
-      imports: [FormsModule, ReactiveFormsModule]
-    })
-      .compileComponents();
-  }));
-
+  let data: any;
   beforeEach(() => {
-    fixture = TestBed.createComponent(SectionComponent);
-    component = fixture.componentInstance;
     ffs = new FormFieldsService();
-
-    let data = JSON.parse('{\n' +
+    data = JSON.parse('{\n' +
       '      "id": 1,\n' +
       '      "name": "Blobex Corporation",\n' +
       '      "type": "form",\n' +
@@ -62,15 +42,12 @@ describe('SectionComponent', () => {
       '      ]\n' +
       '    }');
     data = filter(data.items, (item: SectionClass) => item.type === 'section');
-    ({sections: sections, form: form} = ffs.prepareFormFields(data));
-
-    component.sectionData = sections.OpportunityDetails;
-    component.form = form;
-
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should get proper data', function () {
+    const prepareFormFields = ffs.prepareFormFields(data);
+    expect(prepareFormFields).toEqual(jasmine.any(Object));
+    expect(prepareFormFields.form).toEqual(jasmine.any(FormGroup));
+    expect(prepareFormFields.sections['OpportunityDetails'].header).toBe('Opportunity details');
   });
 });

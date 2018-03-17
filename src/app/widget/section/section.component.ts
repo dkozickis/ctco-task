@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { SectionClass } from '../form-data/form-data.class';
+import { SectionClass } from '../../entities/form-data.class';
 
 
 @Component({

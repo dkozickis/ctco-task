@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { FormDataService } from './form-data-service/form-data.service';
+import { FormDataService } from './services/form-data/form-data.service';
 import { filter } from 'lodash';
 import { NgForm } from '@angular/forms';
-import { FormDataClass, WidgetClass } from './form-data/form-data.class';
+import { FormDataClass, WidgetClass } from './entities/form-data.class';
 
 @Component({
   selector: 'app-root',

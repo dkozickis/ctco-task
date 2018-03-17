@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { FormFieldInput } from '../form-fields/form-field-input';
-import { FormFieldCurrency } from '../form-fields/form-field-currency';
+import { FormFieldInput } from '../../entities/form-field-input';
+import { FormFieldCurrency } from '../../entities/form-field-currency';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { keyBy } from 'lodash';
-import { FormFieldBase } from '../form-fields/form-field-base';
-import { SectionClass } from '../form-data/form-data.class';
+import { FormFieldBase } from '../../entities/form-field-base';
+import { SectionClass } from '../../entities/form-data.class';
 
 @Injectable()
 export class FormFieldsService {

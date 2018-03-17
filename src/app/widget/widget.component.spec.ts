@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WidgetComponent } from './widget.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SectionComponent } from '../section/section.component';
-import { FormFieldComponent } from '../form-fields/form-field.component';
+import { SectionComponent } from './section/section.component';
+import { FormFieldComponent } from './section/form-fields/form-field.component';
 import { AppComponent } from '../app.component';
 
 describe('WidgetComponent', () => {

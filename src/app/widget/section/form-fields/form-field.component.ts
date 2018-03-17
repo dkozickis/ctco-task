@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormFieldBase } from './form-field-base';
+import { FormFieldBase } from '../../../entities/form-field-base';
 import { FormGroup } from '@angular/forms';
 import * as getSymbolFromCurrency from 'currency-symbol-map/currency-symbol-map.js';
 

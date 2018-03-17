@@ -2,8 +2,8 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { WidgetComponent } from './widget/widget.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SectionComponent } from './section/section.component';
-import { FormFieldComponent } from './form-fields/form-field.component';
+import { SectionComponent } from './widget/section/section.component';
+import { FormFieldComponent } from './widget/section/form-fields/form-field.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

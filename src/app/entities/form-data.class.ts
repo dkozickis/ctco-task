@@ -1,4 +1,4 @@
-import { FormFieldBase } from '../form-fields/form-field-base';
+import { FormFieldBase } from './form-field-base';
 
 export class FormDataClass {
   widgets: WidgetClass[];
