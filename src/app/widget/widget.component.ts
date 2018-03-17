@@ -1,8 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { filter } from 'lodash';
-import { FormGroup } from '@angular/forms';
-import { FormFieldsService } from '../services/form-fields/form-fields.service';
-import { SectionClass, WidgetClass } from '../entities/form-data.class';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {filter} from 'lodash';
+import {FormGroup} from '@angular/forms';
+import {FormFieldsService} from '../services/form-fields/form-fields.service';
+import {SectionClass, WidgetClass} from '../entities/form-data.class';
 
 @Component({
   selector: 'app-widget',
@@ -12,7 +12,7 @@ import { SectionClass, WidgetClass } from '../entities/form-data.class';
 })
 export class WidgetComponent implements OnInit {
   @Input() widgetData: WidgetClass;
-  @Output() resetWidgetsEvent = new EventEmitter<string>();
+  @Output() resetWidgetsEvent = new EventEmitter<boolean>();
   sections: SectionClass[];
   form: FormGroup;
   sectionKeys: any[];
@@ -44,7 +44,7 @@ export class WidgetComponent implements OnInit {
    * Hander for click on 'Close' button
    */
   askToResetWidgets() {
-    this.resetWidgetsEvent.emit('');
+    this.resetWidgetsEvent.emit(true);
   }
 
 }
