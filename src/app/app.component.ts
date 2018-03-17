@@ -7,7 +7,6 @@ import { FormDataClass, WidgetClass } from './entities/form-data.class';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
   providers: [FormDataService]
 })
 export class AppComponent {

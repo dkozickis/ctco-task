@@ -1,8 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {filter} from 'lodash';
-import {FormGroup} from '@angular/forms';
-import {FormFieldsService} from '../services/form-fields/form-fields.service';
-import {SectionClass, WidgetClass} from '../entities/form-data.class';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { filter } from 'lodash';
+import { FormGroup } from '@angular/forms';
+import { FormFieldsService } from '../services/form-fields/form-fields.service';
+import { SectionClass, WidgetClass } from '../entities/form-data.class';
 
 @Component({
   selector: 'app-widget',

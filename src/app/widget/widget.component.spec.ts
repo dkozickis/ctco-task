@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SectionComponent } from './section/section.component';
 import { FormFieldComponent } from './section/form-fields/form-field.component';
 import { AppComponent } from '../app.component';
+import { ControlComponent } from '../control/control.component';
 
 describe('WidgetComponent', () => {
   let component: WidgetComponent;
@@ -12,7 +13,7 @@ describe('WidgetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent, WidgetComponent, SectionComponent, FormFieldComponent],
+      declarations: [AppComponent, WidgetComponent, SectionComponent, FormFieldComponent, ControlComponent],
       imports: [FormsModule, ReactiveFormsModule]
     })
       .compileComponents();

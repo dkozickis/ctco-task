@@ -4,12 +4,14 @@ import { WidgetComponent } from './widget/widget.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SectionComponent } from './widget/section/section.component';
 import { FormFieldComponent } from './widget/section/form-fields/form-field.component';
+import { ControlComponent } from './control/control.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+        ControlComponent,
         WidgetComponent,
         SectionComponent,
         FormFieldComponent

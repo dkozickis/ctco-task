@@ -7,6 +7,7 @@ import { FormFieldComponent } from './widget/section/form-fields/form-field.comp
 import { WidgetComponent } from './widget/widget.component';
 import { SectionComponent } from './widget/section/section.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ControlComponent } from './control/control.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     WidgetComponent,
     SectionComponent,
-    FormFieldComponent
+    FormFieldComponent,
+    ControlComponent
   ],
   imports: [
     BrowserModule,
