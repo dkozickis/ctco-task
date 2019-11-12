@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "@types/lodash": "^4.14.104",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.4.1",
     "currency-symbol-map": "^4.0.4",
     "lodash": "^4.17.13",
